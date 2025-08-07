@@ -59,9 +59,32 @@
         text-align: center;
     }
 
-   
+   .buttons{
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+   }
+   .buttons-visualizacao{
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 10px;
+}
+ 
+.modo-grade{
+    padding-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
 
-
+.modo-grade section{
+    width: 40%;
+}
     
 </style>
 <body>
@@ -73,8 +96,12 @@
         Estudante de programação 
         </p>
     </header>
+     <div class="buttons">
+        <button class="buttons-visualizacao" onclick="mudarGrade()">Visualização Grade </button>
+        <button class="buttons-visualizacao" onclick="mudarLista()">Visualização Lista</button>
+     </div>
 
-    <main>
+    <main id="principal">
         <section>
             <h2>
                 Minhas Hanilidades
@@ -118,4 +145,15 @@
         &copy; 2025 Gabriel. Todos os direitos reservados.
     </footer>
 </body>
+<script>
+    function mudarGrade() {
+        const principal = document.getElementById('principal')
+        principal.classList.add('modo-grade')
+    }
+
+    function mudarLista(){
+        const principal = document.getElementById('principal')
+        principal.classList.remove('modo-grade')
+    }
+</script>
 </html>
